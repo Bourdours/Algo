@@ -58,25 +58,52 @@
     <button type="button" class="btn btn-primary" onclick="doYouLikeIt()">
         Ma soupe est-elle bonne ?
     </button>
+    
+    
+    
 </div>
 
 <script type="text/javascript">
     function doYouLikeIt() {
-        // CODE HERE !
+// appel aux fonctions pour savoir si elles sont cochées ou non puis selon ce qui est coché, réponse
+       if (isPoisoned()) {
+           alert("Game over..");
+        } else if (isSalty() && isSweet()) {
+            alert(" Beurk.. C'est pas bon !");
+       } else if (isSweet()) {
+           alert("Hum la bonne sou-soupe sucrée !");
+       } else if (isSalty()) {
+           alert("Hum la bonne sou-soupe salée !");
+       } else {
+            alert(" Je n'ai pas sélectionné d'ingrédients")
+       }
     }
 
     function isSalty() {
         let carrots = document.getElementById("carrots").checked;
-        // CODE HERE !
+        let patate = document.getElementById("potatoes").checked;
+        if (carrots||patate) {
+            return  true
+        } 
     }
-
+    
     function isSweet() {
-        // CODE HERE !
+        let chocb = document.getElementById("black-chocolate").checked;
+        let chocw = document.getElementById("white-chocolate").checked;
+        let tomato = document.getElementById("tomatoes").checked;
+        if (chocb||chocw||tomato){
+            return true
+        }
+    }
+    
+    function isPoisoned() {
+        let vitriol = document.getElementById("vitriol").checked;
+        let cyanure = document.getElementById("cyanide").checked;
+        if (vitriol||cyanure) {
+            return true
+        }
     }
 
-    function isPoisoned() {
-        // CODE HERE !
-    }
 </script>
 </body>
 </html>

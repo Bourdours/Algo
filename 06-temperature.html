@@ -29,13 +29,13 @@
 </div>
 
 <script type="text/javascript">
-    const MELTING_POINT = 12;
+    const MELTING_POINT = 0;
 
     function solidOrLiquid() {
         let temperature = document.getElementById("temperature").value
 
-        if(température > MELTING_POINT) {
-            alert("C'est de l'eau liquide !");
+        if(temperature > MELTING_POINT) {
+            alert("C'est de l'eau liquide !"); // attention au é
         } else {
             alert("C'est de la glace !")
         }
