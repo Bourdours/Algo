@@ -42,7 +42,7 @@
       <br />
       <input type="text" id="promotion" />
       <br />
-      <button type="button" class="btn btn-primary" onclick="cartValue()">
+      <button type="button" class="btn btn-primary" onclick="cartValue2()">
         Connaître la valeur de mon panier
       </button>
     </div>
@@ -74,6 +74,30 @@
         }
       }
 
+
+        function cartValue2(){
+            let articles = document.getElementById("articles");
+            let selectedArticle = articles.options[articles.selectedIndex].value;
+            let reduc = document.getElementById("promotion").value;
+            let prix ;
+            let reduction = 0.9 ;
+
+          if (selectedArticle=="one"){
+            prix = 30 ;
+          } else if (selectedArticle=="two") {
+            prix = 50 ;
+          } else {
+            alert("Pas d'article sélectionné")
+          }
+
+          if (reduc == VALID_PROMOTION_CODE){
+            prix = prix * reduction ;
+            alert("Votre panier est de :" + prix + "€")
+          } else {
+            alert("Votre code de réduction n'est pas valide")
+          }
+
+        }
     </script>
   </body>
 </html>
