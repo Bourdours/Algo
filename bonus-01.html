@@ -116,24 +116,24 @@
         let chaine = document.getElementById("mail").value ; // récupéré la valeur donné par l'utilisateur
 
         chainesplit = chaine.split("@") ; // division à l'arrobase
-        let posaro = chainesplit[0]; // prend l'avant @
+        let prearo = chainesplit[0]; // prend l'avant @
         let postaro = chainesplit[1]; // prend l'après  @
         postarosplit = postaro.split(".") ; // séparation domain / ext
         postaro = postarosplit[0] ; // domaine isolé
         let ext = postarosplit[1] ; // ext isolé
 
-        console.log(chaine.includes(arrobase))
-        console.log(chaine)    
-        console.log(chainesplit)
-        console.log(posaro)    
-        console.log(posaro.length)    
-        console.log(postaro)    
-        console.log(postaro.length)    
-        console.log(ext)
+        console.log(chaine.includes(arrobase)) ;
+        console.log(chaine) ;
+        console.log(chainesplit) ;
+        console.log(prearo) ;
+        console.log(prearo.length) ;    
+        console.log(postaro) ;
+        console.log(postaro.length) ;    
+        console.log(ext) ;
         console.log(ext.length) ;
 
     // vérification : présence d'arrobase,             nom plus grand que 3,       domaine plus grand que 6,     ext entre 2 et 4,   adresse présente
-        if (chaine.includes(arrobase) == true && posaro.length >= 3 && postaro.length >= 6 && ext.length >= 2 && ext.length <= 4 && chaine != null){
+        if (chaine.includes(arrobase) == true && prearo.length >= 3 && postaro.length >= 6 && ext.length >= 2 && ext.length <= 4 && chaine != null){
             alert("Votre adresse mail est valide.")
 
         }else {
